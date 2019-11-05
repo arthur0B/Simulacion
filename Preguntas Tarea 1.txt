@@ -1,0 +1,13 @@
+years = range(1, 6)#Entiendo que aqui se define el rango de 6 anios
+
+market_growth = np.empty(5)#Pero aqui se le pasa un array de tamanio 5
+market_growth[0] = market_size# Y aqui se le asigna al vector 0, el valor de market_size
+growth_factor = 0.03
+for i in range(1, 5):#Entonces aqui no entiendo, se le da un rango a la variable i de 1 a 5
+    market_growth[i] = market_growth[i - 1] * (growth_factor + 1)# Donde se utiliza aqui,si ya se le habia dado un
+    								 #valor al vector 0, entonces no se utiliza o el queda guardado
+pd.DataFrame({'Tamaño del mercado': market_growth}, index=years).T.style.format('{:,.2f}')
+
+plt.hist(market_size, bins=25)#Que hace bins=25
+
+
